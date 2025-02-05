@@ -6,7 +6,7 @@ public class Employee {
 	private String name;
 	private String ssn;
 	private double salary;
-
+	
 	public Employee(int empId, String name, String ssn, double salary) {
 		this.empId = empId;
 		this.name = name;
@@ -14,12 +14,24 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public void setName(String name) {
+	public int getId() {
+		return empId;
+	}
 
+	public void setId(int id) {
+		this.empId = id;
+	}
+
+	public String getSocialSecurityNo() {
+		return ssn;
+	}
+
+	public void setSocialSecurityNo(String socialSecurityNo) {
+		this.ssn = socialSecurityNo;
 	}
 
 	public void raiseSalary(double increase) {
-
+		salary = salary+increase;
 	}
 
 	public int getEmpId() {
@@ -38,6 +50,18 @@ public class Employee {
 		return salary;
 	}
 
+
+	public void setSalary(double salary) {
+		this.salary = salary;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Employee is " + getName() + ", id = " + getId() + ", \nSocial Security# " 
+	+ getSocialSecurityNo() + ", salary = " + getSalary();
+	}
 }
-
-
