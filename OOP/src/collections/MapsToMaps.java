@@ -1,5 +1,6 @@
 package collections;
 
+import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -39,8 +40,10 @@ public class MapsToMaps {
     	}
     });
 
-    publisherToSubscribers.forEach((publisher, numSubscribers) -> 
-    System.out.println(publisher + " has " + numSubscribers + " number of subscribers."));
+   	int min = Collections.min(publisherToSubscribers.values());
+   	int max = Collections.max(publisherToSubscribers.values());
+   	System.out.println(min);
+   	System.out.println(max);
     
     
     }
