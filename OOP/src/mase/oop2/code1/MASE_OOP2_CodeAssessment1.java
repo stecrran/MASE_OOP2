@@ -162,19 +162,29 @@ public class MASE_OOP2_CodeAssessment1  {
                                     new Student("C. Bloggs", "A013", 20, 1.7 )
         );
         
-        // b.
-        Collections.sort(students, Comparator.comparing(s -> s.getId()));
+//        // b.
+//        Collections.sort(students, Comparator.comparing(s -> s.getId()));
+//        
+//        // c.
+//        students.forEach(s -> System.out.println(s));
+//        
+//        // d.
+//        Collections.sort(students, Comparator.comparing(s -> s.getName()));
+//        
+//        // e.
+//        students.forEach(s -> System.out.println(s));
         
-        // c.
-        students.forEach(s -> System.out.println(s));
-        
-        // d.
-        Collections.sort(students, Comparator.comparing(s -> s.getName()));
-        
-        // e.
-        students.forEach(s -> System.out.println(s));
+        // Sorting by ID (b)
+        students.sort(Comparator.comparing(Student::getId));
+        System.out.println("\nSorted by ID:");
+        students.forEach(System.out::println);
 
+        // Sorting by Name (d)
+        students.sort(Comparator.comparing(Student::getName));
+        System.out.println("\nSorted by Name:");
+        students.forEach(System.out::println);
     }
+    
     public static int userChoice() {
         System.out.println("What do you want to do ?");
         System.out.println("1. Sorting");
@@ -184,10 +194,4 @@ public class MASE_OOP2_CodeAssessment1  {
         System.out.print("Enter choice --> ");
         return sc.nextInt();
     }
-
-
-
-
-
-
 }

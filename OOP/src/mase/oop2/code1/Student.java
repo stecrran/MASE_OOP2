@@ -1,10 +1,8 @@
 // Name: Stephen Curran
 package mase.oop2.code1;
 
-import java.util.Comparator;
-
 // The default sort is by 'id'
-public class Student implements Comparator<Student> {
+public class Student implements Comparable<Student> {
     private String name, id;
     private Integer age;
     private Double height;
@@ -49,15 +47,18 @@ public class Student implements Comparator<Student> {
     }
     
 
-    @Override
-    public int compare(Student a, Student b) {
-        return compare(a, b);
-    }
+
 
     // DO NOT AMEND THIS toString()
     @Override
     public String toString() {
         return "Student{" + "name=" + name + ", id=" + id + ", age=" + age + ", height=" + height + '}';
+    }
+
+
+    @Override
+    public int compareTo(Student other) {
+        return this.id.compareTo(other.id);
     }
 
 }
